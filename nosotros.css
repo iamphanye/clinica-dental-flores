@@ -1,0 +1,62 @@
+
+    /* HERO */
+    .hero-nosotros {
+      margin-top: 80px; 
+      height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('img/bg.jpg') center/cover no-repeat;
+    }
+
+    /* SECCIÓN DIENTE */
+    .tooth-section {
+      height: 200vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 100px;
+      text-align: center;
+    }
+
+    .tooth {
+      width: 130px;
+      transition: transform 0.3s ease-out;
+    }
+
+    .tooth-text {
+      margin-top: 80px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+      max-width: 400px;
+    }
+
+    .tooth-text.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tooth-text h2 {
+      margin-bottom: 10px;
+    }
+
+    .tooth-text p {
+      color: #555;
+    }
+
+    .footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255,255,255,0.05);
+  margin-top: 50px;
+  font-size: 14px;
+  color: #cceaff;
+}
+
+.footer p {
+  margin: 5px 0;
+}

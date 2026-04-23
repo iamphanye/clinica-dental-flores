@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros</title>
+
+  <!-- TU CSS GENERAL -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICONO -->
+  <link rel="icon" type="image/png" href="img/logofav.png">
+<Style>
+
+    .hero-nosotros {
+        margin-top: 80px; 
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* 🔥 mejora visibilidad */
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('img/bg.jpg') center/cover no-repeat;
+
+  color: white;
+}
+
+.hero-nosotros h1 {
+  font-size: 36px;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.hero-nosotros p {
+  margin-top: 10px;
+  color: #d0eaff;
+}
+
+    /* SECCIÓN DIENTE */
+    .tooth-section {
+      height: 200vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 100px;
+      text-align: center;
+    }
+
+    .tooth {
+      width: 220px;
+      transition: transform 0.3s ease-out;
+    }
+
+    .tooth-text {
+      margin-top: 80px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+      max-width: 400px;
+    }
+
+    .tooth-text.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tooth-text h2 {
+      margin-bottom: 10px;
+    }
+
+    .tooth-text p {
+      color: #ffffff;
+    }
+
+</Style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <img src="img/logo.png" class="logo">
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-nosotros">
+  <div>
+    <h1>Sobre Nosotros</h1>
+    <p>Comprometidos con tu sonrisa</p>
+  </div>
+</section>
+
+<!-- SECCIÓN ANIMADA -->
+<section class="tooth-section">
+
+  <img src="img/diente.png" class="tooth" id="tooth">
+
+  <div class="tooth-text hidden">
+    <h2>Transformamos tu sonrisa</h2>
+    <p>Utilizamos tecnología moderna para lograr resultados estéticos y naturales.</p>
+  </div>
+
+  <div class="tooth-text hidden">
+    <h2>Atención personalizada</h2>
+    <p>Cada paciente es único, por eso ofrecemos tratamientos adaptados a ti.</p>
+  </div>
+
+  <div class="tooth-text hidden">
+    <h2>Confianza y profesionalismo</h2>
+    <p>Nos enfocamos en brindarte seguridad y comodidad en cada visita.</p>
+  </div>
+
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto">
+  <h2>Contáctanos</h2>
+  <p>📍 Boulevard Adolfo Lopez Mateos #237, Col. Centro, La Piedad, Michoacán</p>
+  <p>📞 352 293 8134</p>
+</section>
+<!-- SCRIPT -->
+<script>
+
+const tooth = document.getElementById("tooth");
+const texts = document.querySelectorAll(".tooth-text");
+
+window.addEventListener("scroll", () => {
+
+  let scrollY = window.scrollY;
+
+  /* ROTAR DIENTE */
+  tooth.style.transform = `rotate(${scrollY * 0.3}deg)`;
+
+  /* MOSTRAR TEXTO */
+  texts.forEach((text, index) => {
+    let trigger = window.innerHeight * (0.4 + index * 0.2);
+
+    if (text.getBoundingClientRect().top < trigger) {
+      text.classList.add("show");
+    }
+  });
+
+});
+
+</script>
+
+</body>
+</html>

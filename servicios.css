@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #021526, #0a2a4a);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.back {
+  color: #00d4ff;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero-servicios {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* 👈 centra horizontal */
+  text-align: center;  /* 👈 centra texto */
+
+  padding: 120px 20px 60px;
+}
+
+.hero-servicios h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-servicios p {
+  color: #cceaff;
+  font-size: 1.1rem;
+}
+
+/* SERVICIOS */
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(3, 280px); /* tamaño fijo bonito */
+  justify-content: center; /* centra todo */
+  gap: 40px;
+  padding: 60px 20px;
+}
+
+.servicio {
+  width: 280px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.servicio h3 {
+  color: #00d4ff;
+  margin-bottom: 10px;
+}
+
+.servicio p {
+  color: #cceaff;
+}
+
+/* HOVER */
+.servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0,212,255,0.2);
+}
+
+.servicio img {
+  width: 100%;
+  height: 140px; /* 👈 más pequeña */
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.servicio:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .servicios {
+    grid-template-columns: repeat(2, 1fr); /* tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .servicios {
+    grid-template-columns: 1fr; /* celular */
+  }
+}
+
+/* SECCIÓN UBICACIÓN */
+.ubicacion {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.ubicacion h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+/* CONTENEDOR DEL MAPA */
+.mapa-container {
+  max-width: 600px;   /* tamaño más pequeño */
+  margin: 0 auto;     /* centrado */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* MAPA */
+.mapa-container iframe {
+  width: 100%;
+  height: 250px;  /* más compacto */
+  border: 0;
+}
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .hero {
+    height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
